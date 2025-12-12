@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+  <net id="pb1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page1">
+      <place id="start"><name><text>Start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="a1"><name><text>A1</text></name></place>
+      <place id="b1"><name><text>B1</text></name></place>
+      <place id="join"><name><text>Join</text></name></place>
+
+      <transition id="split"><name><text>Split</text></name></transition>
+      <transition id="join_t"><name><text>Join_T</text></name></transition>
+
+      <arc source="start" target="split"/>
+      <arc source="split" target="a1"/>
+      <arc source="split" target="b1"/>
+      <arc source="a1" target="join_t"/>
+      <arc source="b1" target="join_t"/>
+      <arc source="join_t" target="join"/>
+    </page>
+  </net>
+</pnml>
+# fail 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+  <net id="pc1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page1">
+      <place id="empty"><name><text>Empty</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="full"><name><text>Full</text></name></place>
+
+      <transition id="produce"><name><text>Produce</text></name></transition>
+      <transition id="consume"><name><text>Consume</text></name></transition>
+
+      <arc source="empty" target="produce"/>
+      <arc source="produce" target="full"/>
+      <arc source="full" target="consume"/>
+      <arc source="consume" target="empty"/>
+    </page>
+  </net>
+</pnml>
